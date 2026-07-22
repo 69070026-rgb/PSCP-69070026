@@ -1,17 +1,14 @@
 """pod"""
 
 def main():
-    """find"""
-    line = int(input())
-    number = []
-    for _ in range(line):
-        num = int(input())
-        number.append(num)
+    """find remaining stranded passengers"""
+    n, k = map(int, input().split())
+    passenger_count = [0] * (k + 1)
+    for _ in range(n):
+        line = int(input())
+        passenger_count[line] += 1
     
-    min_number = number[0]
-    for num in number:
-        if num < min_number:
-            min_number = num
-    
-    print(min_number)
+    min_inline = min(passenger_count[1:])
+    remaining = n - (min_inline * k)
+    print(remaining)
 main()
