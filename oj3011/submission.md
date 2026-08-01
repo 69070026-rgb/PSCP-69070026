@@ -21,7 +21,7 @@ OJ3011 - Colors
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-
+551745
 ```
 
 สถานะ OJ:
