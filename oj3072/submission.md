@@ -21,7 +21,7 @@ OJ3072 - A-E-I-O-U
 OJ submission ID ถ้ามีการส่งแล้ว:
 
 ```text
-
+569940
 ```
 
 สถานะ OJ:
