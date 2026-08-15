@@ -1,5 +1,6 @@
 """birthday"""
 
+from datetime import date
 def main():
     """check which friend was born first"""
     y1 = int(input())
@@ -8,10 +9,13 @@ def main():
     y2 = int(input())
     m2 = int(input())
     d2 = int(input())
-    if y1 < y2:
-        print("1")
-    elif y2 < y1:
-        print("2")
-    elif y1 == y2 and m1 == m2 and (d1 - d2) <=7:
-        print("0")
+    date1 = date(y1, m1, d1)
+    date2 = date(y2, m2, d2)
+    diff = abs((date1 - date2).days)
+    if diff <= 7:
+        print(0)
+    elif date1 < date2:
+        print(1)
+    else:
+        print(2)
 main()
