@@ -2,30 +2,23 @@
 
 def main():
     flash = input().split()
-    package = int(input())
+    package = float(input())
     come = flash[0]
     out = flash[1]
+    route = (come, out)
     tax = {
-        ("BKK","CNX") : 10 ,
-        ("CNX","UBP") : 15 ,
-        ("UBP","BKK") : 20 ,
-        ("BKK","PKT") : 25 ,
-        ("PKT","CNX") : 30 ,
-        ("UBP","PKT") : 30
+        ("BKK", "CNX") : (10, 30),
+        ("CNX", "UBP") : (15, 40),
+        ("UBP", "BKK") : (20, 40),
+        ("BKK", "PKT") : (25, 50),
+        ("PKT", "CNX") : (30, 60),
+        ("UBP", "PKT") : (40, 70),
     }
-    route = (come,out)
-    pricefirst = tax.get(route)
+    if route not in tax:
+        print("Error")
+        return
 
-    weight = { 
-        10 : 30 ,
-        15 : 40 ,
-        20 : 40 ,
-        25 : 50 ,
-        30 : 60 ,
-        40 : 70 
-    }
-    weight_price = weight.get(package,0)
-    price = weight_price * package
-    price += pricefirst
+    base_fee, weight_fee = tax[route]
+    price = base_fee + weight_fee * package
     print(price)
 main()
