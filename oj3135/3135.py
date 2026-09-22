@@ -4,7 +4,7 @@ def main():
     """Gifts and theft"""
     n, k, t = map(int, input().split())
     current = 1
-    cycle = 0
+    cycle = 1
     if current == t:
         print(cycle)
         return
@@ -14,8 +14,6 @@ def main():
             break
         cycle += 1
         if current == t:
-            cycle += 1
             break
     print(cycle)
 main()
-

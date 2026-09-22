@@ -15,7 +15,5 @@ def main():
                 prime.append(i)
     if len(prime) > 0:
         print(" ".join(map(str, prime)))
-    else:
-        print("")
     print(f"Total primes: {len(prime)}")
 main()
